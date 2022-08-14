@@ -1,0 +1,53 @@
+.DropDownModal {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+  background-color: #e4efe5fa;
+  border-radius: 12px;
+  width: max-content;
+  padding-block: 0.75rem;
+  z-index: 99;
+}
+.DropDownModal p {
+  padding-inline-start: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.DropDownModal div {
+  padding: 0.2rem 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 0.7rem;
+}
+
+.DropDownModal div:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.DropDownModal label {
+  flex-grow: 1;
+}
+.DropDownModal input {
+  appearance: none;
+  position: relative;
+}
+.DropDownModal input:checked::after,
+.DropDownModal input[checked]::after {
+  content: "✓";
+  position: absolute;
+  width: 20px;
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: fit-content;
+  transform: translate(-60%, -60%);
+}
+
+.DropDownModal div:hover input:checked::after {
+  color: white;
+}

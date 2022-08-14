@@ -1,0 +1,11 @@
+.section:not(:last-child) {
+  margin-bottom: 5rem;
+}
+
+.books {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+}

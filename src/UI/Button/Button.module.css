@@ -1,0 +1,41 @@
+.Button {
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: none;
+  outline: none;
+}
+
+.dropDown {
+  position: absolute;
+  transform: translate(50%, 50%);
+  background-color: #4caf50;
+  right: 0;
+  bottom: 0;
+  width: 3.3rem;
+}
+
+.dropDown:hover {
+  filter: contrast(1.5);
+}
+
+.add {
+  background-color: #4f8a51;
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  width: 4rem;
+  animation: fade-in 1000ms forwards ease-in;
+}
+
+.add:hover {
+  filter: contrast(3);
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

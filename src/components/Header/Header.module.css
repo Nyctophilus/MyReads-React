@@ -1,0 +1,10 @@
+.Header {
+  padding-block: 0.7rem;
+  background-color: #793bb2;
+  margin-bottom: 2rem;
+}
+
+.Header h1 {
+  text-align: center;
+  color: aliceblue;
+}
