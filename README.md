@@ -1,7 +1,8 @@
 <div id="top"></div>
 
 ![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
-![React Router](https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router&logoColor=white&style=for-the-badge)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 
 <br>
 <br>
@@ -73,8 +74,10 @@ This project require some prequesites and dependenscies to be installed, you can
 
 ## Preview
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7ac2604a-4ce9-4826-8709-a36e46355e1e/deploy-status)]()
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7ac2604a-4ce9-4826-8709-a36e46355e1e/deploy-status)](https://fayad-myreads-react-redux-fwd.netlify.app)
 
 ## Screenshots
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+![Preview](preview.png)
+
+<p align="right">'<a href="#top">back to top</a>'</p>
