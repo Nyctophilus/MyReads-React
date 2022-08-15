@@ -4,15 +4,18 @@ import Book from "../Book/Book";
 import classes from "./Shelf.module.css";
 
 const Shelf = ({ heading, books }) => {
+  console.log(books);
   return (
     <section className={classes.section}>
-      <Title>{heading}</Title>
+      {heading && <Title>{heading}</Title>}
 
-      <div className={classes.books}>
-        {books.map((b) => (
-          <Book key={b.id} {...b} />
-        ))}
-      </div>
+      {books && (
+        <div className={classes.books}>
+          {books.map((b) => (
+            <Book key={b.id} {...b} />
+          ))}
+        </div>
+      )}
     </section>
   );
 };

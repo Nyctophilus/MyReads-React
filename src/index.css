@@ -17,3 +17,22 @@ body {
   width: 90vw;
   margin-inline: auto;
 }
+
+::selection {
+  background-color: #b567fd;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #b467fd2d;
+}
+::-webkit-scrollbar-thumb {
+  background: #b567fd;
+  border-radius: 12px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8500ff;
+}

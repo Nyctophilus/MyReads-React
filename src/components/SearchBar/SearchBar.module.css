@@ -1,0 +1,18 @@
+.SearchBar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  box-shadow: 0 5px 10px #aba2a296;
+}
+
+.SearchBar input {
+  width: 100%;
+  font-size: 2.5rem;
+  padding: 0.6rem 1.2rem;
+  outline: none;
+  border: none;
+  caret-color: #c484ff;
+}

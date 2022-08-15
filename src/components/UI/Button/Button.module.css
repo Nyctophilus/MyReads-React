@@ -39,3 +39,16 @@
     opacity: 1;
   }
 }
+
+.back {
+  background-color: transparent;
+  width: 70px;
+  transform: translateX(10px);
+  transition: filter 300ms ease-out,
+    transform 300ms ease-out;
+}
+
+.back:hover {
+  transform: translateX(0);
+  filter: drop-shadow(0 0 3px #aa69e78d);
+}

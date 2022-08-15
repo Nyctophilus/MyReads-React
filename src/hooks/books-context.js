@@ -7,7 +7,7 @@ const BooksContext = createContext();
 export const DdContextProvider = ({ children }) => {
   const [allBooks, setAllBooks] = useState([]);
 
-  const fetchAllBooks = useCallback(
+  const fetchAllBooksCategorized = useCallback(
     () =>
       getAll().then((fetchedBooks) =>
         setAllBooks([
@@ -74,7 +74,11 @@ export const DdContextProvider = ({ children }) => {
 
   return (
     <BooksContext.Provider
-      value={{ allBooks, fetchAllBooks, updateShelves }}
+      value={{
+        allBooks,
+        fetchAllBooksCategorized,
+        updateShelves,
+      }}
     >
       {children}
     </BooksContext.Provider>
