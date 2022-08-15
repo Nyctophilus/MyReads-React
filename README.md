@@ -41,12 +41,19 @@
 
 ### A Bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. The project emphasizes using React to build the application and provides an API server and client library that you will use to persist information as you interact with the application.
 
+<br>
+<br>
+
 ## Stack
 
 - React.js
 - React-Router lib
+- Redux/toolkit
 
 ---
+
+<br>
+<br>
 
 <!-- GETTING STARTED -->
 
@@ -76,8 +83,14 @@ This project require some prequesites and dependenscies to be installed, you can
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7ac2604a-4ce9-4826-8709-a36e46355e1e/deploy-status)](https://fayad-myreads-react-redux-fwd.netlify.app)
 
+<br>
+<br>
+
 ## Screenshots
 
 ![Preview](preview.png)
+
+<br>
+<br>
 
 <p align="right">'<a href="#top">back to top</a>'</p>
