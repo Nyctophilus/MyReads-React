@@ -1,11 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { search } from "../../api/BooksAPI";
 import Button from "../UI/Button/Button";
 import classes from "./SearchBar.module.css";
 
-const SearchBar = ({ getSearchResults }) => {
+const SearchBar = ({ getSearchResults, isScrolled }) => {
   const [query, setQuery] = useState("");
 
   const searchHandler = (e) => {
@@ -15,13 +14,18 @@ const SearchBar = ({ getSearchResults }) => {
   };
   const clearInputHandler = () => setQuery("");
 
+  const searchBarClasses = isScrolled
+    ? `${classes.SearchBar} ${classes["bar-scrolled"]}`
+    : classes.SearchBar;
+
   return (
-    <div className={classes.SearchBar}>
+    <div className={searchBarClasses}>
       <Link to="/">
         <Button svg={"back"} />
       </Link>
       <input
         type="text"
+        placeholder="Search by title, author, or ISBN"
         value={query}
         onChange={searchHandler}
         onBlur={clearInputHandler}

@@ -1,18 +1,30 @@
 .SearchBar {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   column-gap: 1.5rem;
   box-shadow: 0 5px 10px #aba2a296;
+  z-index: 100;
+  background-color: white;
+  transition: width 400ms ease-in-out,
+    border-radius 400ms ease-in-out;
+}
+
+.SearchBar.bar-scrolled {
+  width: 90vw;
+  border-radius: 2rem;
 }
 
 .SearchBar input {
   width: 100%;
   font-size: 2.5rem;
-  padding: 0.6rem 1.2rem;
+  padding: 1.6rem 1.2rem;
   outline: none;
   border: none;
   caret-color: #c484ff;
+  border-radius: 2rem;
 }

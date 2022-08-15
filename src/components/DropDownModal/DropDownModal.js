@@ -2,14 +2,6 @@ import { useContext } from "react";
 import BooksContext from "../../hooks/books-context";
 import classes from "./DropDownModal.module.css";
 
-const dropDownOptions = [
-  { text: "Move to..." },
-  { text: "Currently Reading" },
-  { text: "Want To Read" },
-  { text: "Read" },
-  { text: "None" },
-];
-
 const DropDownModal = ({
   myShelf,
   id,
@@ -17,7 +9,8 @@ const DropDownModal = ({
   configSheleves,
 }) => {
   // FIXDONE get context-shelf-update here!
-  const { updateShelves } = useContext(BooksContext);
+  const { updateShelves, allBooks } =
+    useContext(BooksContext);
 
   const changeFormHandler = (e) => {
     const newShelf = e.target.value;
@@ -27,23 +20,40 @@ const DropDownModal = ({
     toggleDropDownHandler(false);
   };
 
+  let isMine = false;
+  allBooks.forEach((cat) =>
+    cat.books.forEach((book) => {
+      if (id === book.id) isMine = true;
+    })
+  );
+
+  let dropDownOptions = [
+    { text: "Move to..." },
+    { text: "Currently Reading" },
+    { text: "Want To Read" },
+    { text: "Read" },
+    isMine && { text: "None" },
+  ];
+
+  console.log(myShelf);
+
   return (
     <select
       className={classes.DropDownModal}
       value={myShelf}
       onChange={changeFormHandler}
-      size={5}
+      size={isMine ? 5 : 4}
     >
       {dropDownOptions.map(({ text }) => {
         const transformedText = `${text
-          .charAt(0)
+          ?.charAt(0)
           .toLowerCase()}${text
-          .slice(1)
+          ?.slice(1)
           .replace(/ /g, "")}`;
 
         return (
           <option
-            key={text}
+            key={text || "someShitId"}
             disabled={text === "Move to..."}
             value={transformedText}
           >

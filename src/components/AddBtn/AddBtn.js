@@ -1,26 +1,9 @@
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useScroll from "../../hooks/use-scroll";
 import Button from "../UI/Button/Button";
 
 const AddBtn = () => {
-  const [isAddBtn, setIsAddBtn] = useState(false);
-
-  const scrollDetectHandler = () => {
-    if (window.scrollY > 50) setIsAddBtn(true);
-    else setIsAddBtn(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", scrollDetectHandler);
-
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        scrollDetectHandler
-      );
-  }, []);
-
-  if (isAddBtn)
+  if (useScroll())
     return (
       <Link to="search">
         <Button svg={"add"} />

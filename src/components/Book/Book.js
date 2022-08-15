@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Book = ({
   title,
-  imageLinks: { thumbnail },
+  imageLinks,
   authors,
   shelf,
   id,
@@ -17,10 +17,24 @@ const Book = ({
 
   const configSheleves = (shel) => setMyShelf(shel);
 
+  //   if(!shelf)
+
   return (
     <div className={classes.book}>
       <div className={classes["img-box"]}>
-        <img src={thumbnail} alt={title} />
+        {imageLinks?.thumbnail ? (
+          <img src={imageLinks?.thumbnail} alt={title} />
+        ) : (
+          <span
+            style={{
+              height: "20vh",
+              lineHeight: "20vh",
+              textShadow: "#7e7b7b 6px 8px 10px",
+            }}
+          >
+            No Preview Image
+          </span>
+        )}
         <Button
           {...{
             svg: "dropDown",
@@ -28,6 +42,7 @@ const Book = ({
           }}
         />
 
+        {/* BUG close the modal on click-anywhere- ... may implement context for dropDownMenu */}
         {dropDown && (
           <DropDownModal
             {...{
@@ -41,9 +56,8 @@ const Book = ({
       </div>
 
       <h3>{title}</h3>
-      {authors.map((aut) => (
-        <p key={aut}>{aut}</p>
-      ))}
+      {authors &&
+        authors.map((aut) => <p key={aut}>{aut}</p>)}
     </div>
   );
 };
