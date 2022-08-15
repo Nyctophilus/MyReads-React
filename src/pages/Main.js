@@ -6,12 +6,12 @@ import Shelf from "../components/Shelf/Shelf";
 import BooksContext from "../hooks/books-context";
 
 const Main = () => {
-  const { allBooks, fetchAllBooks } =
+  const { allBooks, fetchAllBooksCategorized } =
     useContext(BooksContext);
 
   useEffect(() => {
-    fetchAllBooks();
-  }, [fetchAllBooks]);
+    fetchAllBooksCategorized();
+  }, [fetchAllBooksCategorized]);
 
   return (
     <>
