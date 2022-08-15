@@ -1,6 +1,6 @@
-import { ReactComponent as ArrowDropDown } from "../../icons/arrow-drop-down.svg";
-import { ReactComponent as Add } from "../../icons/add.svg";
-import { ReactComponent as ArrowBack } from "../../icons/arrow-back.svg";
+import { ReactComponent as ArrowDropDown } from "../../../icons/arrow-drop-down.svg";
+import { ReactComponent as Add } from "../../../icons/add.svg";
+import { ReactComponent as ArrowBack } from "../../../icons/arrow-back.svg";
 import classes from "./Button.module.css";
 
 const Button = ({ svg, onClick }) => {
@@ -11,7 +11,7 @@ const Button = ({ svg, onClick }) => {
     >
       {svg === "dropDown" && <ArrowDropDown />}
 
-      {svg === "add" && <Add />}
+      {/^add/.test(svg) && <Add />}
 
       {svg === "back" && <ArrowBack />}
     </button>

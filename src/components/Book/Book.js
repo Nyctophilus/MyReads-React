@@ -1,4 +1,4 @@
-import Button from "../../UI/Button/Button";
+import Button from "../UI/Button/Button";
 import classes from "./Book.module.css";
 import DropDownModal from "../DropDownModal/DropDownModal";
 import { useState } from "react";
@@ -11,9 +11,11 @@ const Book = ({
   id,
 }) => {
   const [dropDown, setDropDown] = useState(false);
+  const [myShelf, setMyShelf] = useState(shelf);
 
-  const clickDropDownHandler = (e) =>
-    setDropDown((prev) => !prev);
+  const toggleDropDownHandler = (v) => setDropDown(v);
+
+  const configSheleves = (shel) => setMyShelf(shel);
 
   return (
     <div className={classes.book}>
@@ -22,12 +24,20 @@ const Book = ({
         <Button
           {...{
             svg: "dropDown",
-            onClick: clickDropDownHandler,
+            onClick: () => toggleDropDownHandler(true),
           }}
         />
 
-        {/* FIXME Add Redux!!! */}
-        {dropDown && <DropDownModal {...{ shelf, id }} />}
+        {dropDown && (
+          <DropDownModal
+            {...{
+              myShelf,
+              id,
+              toggleDropDownHandler,
+              configSheleves,
+            }}
+          />
+        )}
       </div>
 
       <h3>{title}</h3>

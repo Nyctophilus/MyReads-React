@@ -1,28 +1,57 @@
+import { useContext } from "react";
+import BooksContext from "../../hooks/books-context";
 import classes from "./DropDownModal.module.css";
-import Input from "./Input";
 
-const DropDownModal = ({ shelf, id }) => {
-  const dropDownOptions = [
-    { id: id + "r1", text: "Currently Reading" },
-    { id: id + "r2", text: "Want To Read" },
-    { id: id + "r3", text: "Read" },
-    { id: id + "r4", text: "None" },
-  ];
+const dropDownOptions = [
+  { text: "Move to..." },
+  { text: "Currently Reading" },
+  { text: "Want To Read" },
+  { text: "Read" },
+  { text: "None" },
+];
 
-  const changeFormHandler = () => console.log(`submit`);
+const DropDownModal = ({
+  myShelf,
+  id,
+  toggleDropDownHandler,
+  configSheleves,
+}) => {
+  // FIXDONE get context-shelf-update here!
+  const { updateShelves } = useContext(BooksContext);
+
+  const changeFormHandler = (e) => {
+    const newShelf = e.target.value;
+
+    updateShelves(id, newShelf);
+    configSheleves(newShelf);
+    toggleDropDownHandler(false);
+  };
 
   return (
-    <form
+    <select
       className={classes.DropDownModal}
+      value={myShelf}
       onChange={changeFormHandler}
+      size={5}
     >
-      <p>Move to...</p>
-      {dropDownOptions.map((opt) => {
+      {dropDownOptions.map(({ text }) => {
+        const transformedText = `${text
+          .charAt(0)
+          .toLowerCase()}${text
+          .slice(1)
+          .replace(/ /g, "")}`;
+
         return (
-          <Input key={opt.id} {...opt} shelf={shelf} />
+          <option
+            key={text}
+            disabled={text === "Move to..."}
+            value={transformedText}
+          >
+            {text}
+          </option>
         );
       })}
-    </form>
+    </select>
   );
 };
 

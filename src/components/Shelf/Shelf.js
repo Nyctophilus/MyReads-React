@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../../UI/Title/Title";
+import Title from "../UI/Title/Title";
 import Book from "../Book/Book";
 import classes from "./Shelf.module.css";
 

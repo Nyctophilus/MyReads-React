@@ -3,51 +3,50 @@
   right: 0;
   bottom: 0;
   transform: translate(50%, 50%);
-  background-color: #e4efe5fa;
+  background-color: #dec6f5f7;
   border-radius: 12px;
   width: max-content;
   padding-block: 0.75rem;
   z-index: 99;
-}
-.DropDownModal p {
-  padding-inline-start: 1.5rem;
-  margin-bottom: 0.3rem;
+  overflow-y: hidden;
+  border: none;
+  outline: none;
+  box-shadow: 2px 5px 10px #b5b5b5;
 }
 
-.DropDownModal div {
-  padding: 0.2rem 1rem;
+.DropDownModal option {
+  padding: 0.2rem 1rem 0.2rem 2rem;
   position: relative;
   display: flex;
   align-items: center;
   column-gap: 0.7rem;
 }
 
-.DropDownModal div:hover {
-  background-color: #4caf50;
+.DropDownModal option:disabled {
+  color: #b5b5b5;
+  margin-bottom: 0.2rem;
+}
+
+.DropDownModal option:not(:first-of-type):hover,
+.DropDownModal option:not(:first-of-type):active,
+.DropDownModal option:not(:first-of-type):checked {
+  background: #b567fd !important;
   color: white;
 }
 
-.DropDownModal label {
-  flex-grow: 1;
-}
-.DropDownModal input {
-  appearance: none;
-  position: relative;
-}
 .DropDownModal input:checked::after,
-.DropDownModal input[checked]::after {
+.DropDownModal option:not(:first-of-type):checked::after {
   content: "✓";
   position: absolute;
-  width: 20px;
   aspect-ratio: 1;
-  left: 50%;
-  top: 50%;
+  left: 8px;
+  top: -5.5px;
   font-size: 1.5rem;
   font-weight: bold;
   width: fit-content;
-  transform: translate(-60%, -60%);
 }
 
-.DropDownModal div:hover input:checked::after {
+.DropDownModal
+  option:not(:first-of-type):checked:hover:after {
   color: white;
 }
