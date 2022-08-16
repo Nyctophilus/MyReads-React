@@ -88,7 +88,13 @@ This project require some prequesites and dependenscies to be installed, you can
 
 ## Screenshots
 
+### Preview Image
+
 ![Preview](preview.png)
+
+### Tree Architecture
+
+![Components Tree Architecture](components-tree-structure.png)
 
 <br>
 <br>
