@@ -17,8 +17,6 @@ const Book = ({
 
   const configSheleves = (shel) => setMyShelf(shel);
 
-  //   if(!shelf)
-
   return (
     <div className={classes.book}>
       <div className={classes["img-box"]}>

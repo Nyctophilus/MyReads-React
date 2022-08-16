@@ -13,6 +13,7 @@
   right: 0;
   bottom: 0;
   width: 3.3rem;
+  box-shadow: 3px 4px 10px #918f8f;
 }
 
 .dropDown:hover {
@@ -26,6 +27,7 @@
   bottom: 3rem;
   width: 4rem;
   animation: fade-in 1000ms forwards ease-in;
+  box-shadow: 3px 4px 10px #918f8f;
 }
 
 .add:hover {
