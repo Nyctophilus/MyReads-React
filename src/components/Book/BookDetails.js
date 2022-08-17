@@ -37,13 +37,6 @@ const BookDetails = ({
       setText(`${description.substring(0, 200)}...`);
   };
 
-  const refinedShelf = `${shelf
-    .charAt(0)
-    .toUpperCase()}${shelf
-    .slice(1)
-    .split(/(?=[A-Z])/)
-    .join(" ")}`;
-
   return (
     <>
       <div className={classes.modal}>
@@ -98,7 +91,10 @@ const BookDetails = ({
         {shelf && (
           <div>
             <span>The Book is Currently On Shelf: </span>
-            <span>{refinedShelf}</span>
+            <span>{`${shelf.charAt(0).toUpperCase()}${shelf
+              .slice(1)
+              .split(/(?=[A-Z])/)
+              .join(" ")}`}</span>
           </div>
         )}
 
