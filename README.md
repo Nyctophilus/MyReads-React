@@ -2,7 +2,6 @@
 
 ![React](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 
 <br>
 <br>
@@ -48,7 +47,6 @@
 
 - React.js
 - React-Router lib
-- Redux/toolkit
 
 ---
 
