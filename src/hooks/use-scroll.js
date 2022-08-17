@@ -9,14 +9,22 @@ const useScroll = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", scrollDetectHandler);
-    console.log(`[EFFECT] useScroll`);
+    const timer = setTimeout(() => {
+      window.addEventListener(
+        "scroll",
+        scrollDetectHandler
+      );
+      console.log(`[EFFECT] Scrolling`);
+    }, 500);
 
-    return () =>
+    return () => {
       window.removeEventListener(
         "scroll",
         scrollDetectHandler
       );
+
+      clearTimeout(timer);
+    };
   }, [isScrolled]);
 
   return isScrolled;

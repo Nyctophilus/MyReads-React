@@ -4,20 +4,19 @@ import classes from "./DropDownModal.module.css";
 import Overlay from "./Overlay";
 
 const DropDownModal = ({
-  myShelf,
+  shelf,
   id,
   toggleDropDownHandler,
-  configSheleves,
 }) => {
   // FIXDONE get context-shelf-update here!
   const { updateShelves, allBooks } =
     useContext(BooksContext);
 
-  const changeFormHandler = (e) => {
-    const newShelf = e.target.value;
+  const changeFormHandler = async (e) => {
+    const inputShelf = e.target.value;
 
-    updateShelves(id, newShelf);
-    configSheleves(newShelf);
+    updateShelves(id, inputShelf);
+
     toggleDropDownHandler(false);
   };
 
@@ -36,13 +35,11 @@ const DropDownModal = ({
     isMine && { text: "None" },
   ];
 
-  console.log(myShelf);
-
   return (
     <>
       <select
         className={classes.DropDownModal}
-        value={myShelf}
+        value={shelf}
         onChange={changeFormHandler}
         size={isMine ? 5 : 4}
       >

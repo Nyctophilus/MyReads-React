@@ -4,7 +4,6 @@ import Book from "../Book/Book";
 import classes from "./Shelf.module.css";
 
 const Shelf = ({ heading, books }) => {
-  console.log(books);
   return (
     <section className={classes.section}>
       {heading && <Title>{heading}</Title>}

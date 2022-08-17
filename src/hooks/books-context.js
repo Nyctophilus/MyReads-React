@@ -7,54 +7,61 @@ const BooksContext = createContext();
 export const DdContextProvider = ({ children }) => {
   const [allBooks, setAllBooks] = useState([]);
 
-  const fetchAllBooksCategorized = useCallback(
-    () =>
-      getAll().then((fetchedBooks) =>
-        setAllBooks([
-          {
-            heading: "Currently Reading",
-            books: fetchedBooks.filter(
-              (setOfBooks) =>
-                setOfBooks.shelf === "currentlyReading"
-            ),
-          },
-          {
-            heading: "Want To Read",
-            books: fetchedBooks.filter(
-              (setOfBooks) =>
-                setOfBooks.shelf === "wantToRead"
-            ),
-          },
-          {
-            heading: "Read",
-            books: fetchedBooks.filter(
-              (setOfBooks) => setOfBooks.shelf === "read"
-            ),
-          },
-        ])
-      ),
-    []
-  );
+  const fetchAllBooksCategorized = useCallback(() => {
+    getAll().then((fetchedBooks) => {
+      const categorizedFetchedBooks = [
+        {
+          heading: "Currently Reading",
+          books: fetchedBooks.filter(
+            (setOfBooks) =>
+              setOfBooks.shelf === "currentlyReading"
+          ),
+        },
+        {
+          heading: "Want To Read",
+          books: fetchedBooks.filter(
+            (setOfBooks) =>
+              setOfBooks.shelf === "wantToRead"
+          ),
+        },
+        {
+          heading: "Read",
+          books: fetchedBooks.filter(
+            (setOfBooks) => setOfBooks.shelf === "read"
+          ),
+        },
+      ];
+      setAllBooks(categorizedFetchedBooks);
 
-  const updateShelves = useCallback((id, shelf) => {
-    update(id, shelf).then((adjustedShelves) =>
+      localStorage.setItem(
+        "my-books",
+        JSON.stringify(categorizedFetchedBooks)
+      );
+    });
+  }, []);
+
+  const updateShelves = useCallback((Bid, updatedShelf) => {
+    update(Bid, updatedShelf).then((adjustedShelves) => {
       setAllBooks((allBooks) => {
         const categorizeTheFuckEm = (type) => {
           let Selectedbooks = [];
 
           allBooks.forEach((b) =>
-            b.books.forEach((book) =>
+            b.books.forEach((book) => {
+              if (Bid === book.id)
+                book.shelf = updatedShelf;
+
               adjustedShelves[`${type}`].forEach((id) => {
                 if (id === book.id)
                   Selectedbooks.push(book);
-              })
-            )
+              });
+            })
           );
 
           return Selectedbooks;
         };
 
-        return [
+        const categorizedUpdatedBooks = [
           {
             heading: "Currently Reading",
             books: categorizeTheFuckEm("currentlyReading"),
@@ -68,8 +75,15 @@ export const DdContextProvider = ({ children }) => {
             books: categorizeTheFuckEm("read"),
           },
         ];
-      })
-    );
+
+        localStorage.setItem(
+          "my-books",
+          JSON.stringify(categorizedUpdatedBooks)
+        );
+
+        return categorizedUpdatedBooks;
+      });
+    });
   }, []);
 
   return (

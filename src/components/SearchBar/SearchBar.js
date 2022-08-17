@@ -1,18 +1,22 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useDebounce from "../../hooks/useDebounce";
 import Button from "../UI/Button/Button";
 import classes from "./SearchBar.module.css";
 
 const SearchBar = ({ getSearchResults, isScrolled }) => {
   const [query, setQuery] = useState("");
+  const debouncedQuery = useDebounce(query, 600);
 
-  const searchHandler = (e) => {
-    setQuery(e.target.value);
+  useEffect(() => {
+    getSearchResults(debouncedQuery);
+  }, [debouncedQuery, getSearchResults]);
 
-    getSearchResults(query);
-  };
-  const clearInputHandler = () => setQuery("");
+  const searchHandler = (e) => setQuery(e.target.value);
+
+  //   const clearInputHandler = () => setQuery("");
 
   const searchBarClasses = isScrolled
     ? `${classes.SearchBar} ${classes["bar-scrolled"]}`
@@ -28,7 +32,7 @@ const SearchBar = ({ getSearchResults, isScrolled }) => {
         placeholder="Search by title, author, or ISBN"
         value={query}
         onChange={searchHandler}
-        onBlur={clearInputHandler}
+        // onBlur={clearInputHandler}
       />
     </div>
   );
