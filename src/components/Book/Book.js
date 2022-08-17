@@ -1,8 +1,11 @@
+import { useState, lazy } from "react";
 import Button from "../UI/Button/Button";
 import classes from "./Book.module.css";
-import DropDownModal from "../DropDownModal/DropDownModal";
-import { useState } from "react";
-import BookDetails from "./BookDetails";
+
+const DropDownModal = lazy(() =>
+  import("../DropDownModal/DropDownModal")
+);
+const BookDetails = lazy(() => import("./BookDetails"));
 
 const Book = ({
   title,

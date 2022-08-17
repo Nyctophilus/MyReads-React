@@ -1,6 +1,8 @@
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
-import Search from "./pages/Search";
+
+const Search = lazy(() => import("./pages/Search"));
 
 const App = () => {
   return (

@@ -1,9 +1,11 @@
-import { useContext } from "react";
-import { useEffect } from "react";
-import AddBtn from "../components/AddBtn/AddBtn";
+import { useContext, useEffect, lazy } from "react";
 import Header from "../components/Header/Header";
 import Shelf from "../components/Shelf/Shelf";
 import BooksContext from "../hooks/books-context";
+
+const AddBtn = lazy(() =>
+  import("../components/AddBtn/AddBtn")
+);
 
 const Main = () => {
   const { allBooks, fetchAllBooksCategorized } =
