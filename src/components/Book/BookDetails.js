@@ -29,13 +29,12 @@ const BookDetails = ({
   };
 
   const readMore = () => {
-    setIsReadMore(false);
-    setText(description);
-  };
+    setIsReadMore((prev) => !prev);
 
-  const shortenAgain = () => {
-    setText(`${description.substring(0, 200)}...`);
-    setIsReadMore(true);
+    if (isReadMore) setText(description);
+
+    if (!isReadMore)
+      setText(`${description.substring(0, 200)}...`);
   };
 
   const refinedShelf = `${shelf
@@ -78,15 +77,14 @@ const BookDetails = ({
         {description && (
           <div>
             <span>Book Description: </span>
-            <span onClick={shortenAgain}>{text}</span>
-            {isReadMore && (
-              <button
-                onClick={readMore}
-                className={classes.readMore}
-              >
-                read more
-              </button>
-            )}
+            <span>{text}</span>
+
+            <button
+              onClick={readMore}
+              className={classes.readMore}
+            >
+              {isReadMore ? "read more" : "read less"}
+            </button>
           </div>
         )}
 
