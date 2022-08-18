@@ -12,7 +12,7 @@ const BookDetails = ({
   language,
   description,
   categories,
-  toggleBookDetails,
+  setBookDetails,
 }) => {
   const [text, setText] = useState(
     `${description.substring(0, 200)}...`
@@ -24,7 +24,7 @@ const BookDetails = ({
   }, []);
 
   const closeModal = () => {
-    toggleBookDetails(false);
+    setBookDetails(false);
     document.body.style.overflowY = "initial";
   };
 

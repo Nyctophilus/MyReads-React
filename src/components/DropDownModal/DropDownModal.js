@@ -9,8 +9,7 @@ const DropDownModal = ({
   toggleDropDownHandler,
 }) => {
   // FIXDONE get context-shelf-update here!
-  const { updateShelves, allBooks } =
-    useContext(BooksContext);
+  const { updateShelves } = useContext(BooksContext);
 
   const changeFormHandler = async (e) => {
     const inputShelf = e.target.value;
@@ -20,28 +19,21 @@ const DropDownModal = ({
     toggleDropDownHandler(false);
   };
 
-  let isMine = false;
-  allBooks.forEach((cat) =>
-    cat.books.forEach((book) => {
-      if (id === book.id) isMine = true;
-    })
-  );
-
   let dropDownOptions = [
     { text: "Move to..." },
     { text: "Currently Reading" },
     { text: "Want To Read" },
     { text: "Read" },
-    isMine && { text: "None" },
+    { text: "None" },
   ];
 
   return (
     <>
       <select
         className={classes.DropDownModal}
-        value={shelf}
+        value={shelf || "none"}
         onChange={changeFormHandler}
-        size={isMine ? 5 : 4}
+        size={5}
       >
         {dropDownOptions.map(({ text }) => {
           const transformedText = `${text

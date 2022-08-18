@@ -25,10 +25,12 @@ const Book = ({
 
   const toggleDropDownHandler = (v) => setDropDown(v);
 
-  const toggleBookDetails = (v) => setBookDetails(v);
-
   const imgContainer = imageLinks?.thumbnail ? (
-    <img src={imageLinks?.thumbnail} alt={title} />
+    <img
+      src={imageLinks?.thumbnail}
+      alt={title}
+      onClick={() => setBookDetails(true)}
+    />
   ) : (
     <span
       style={{
@@ -36,6 +38,7 @@ const Book = ({
         lineHeight: "20vh",
         textShadow: "#7e7b7b 6px 8px 10px",
       }}
+      onClick={() => setBookDetails(true)}
     >
       No Preview Image
     </span>
@@ -43,10 +46,7 @@ const Book = ({
 
   return (
     <>
-      <div
-        className={classes.book}
-        onClick={() => toggleBookDetails(true)}
-      >
+      <div className={classes.book}>
         <div className={classes["img-box"]}>
           {imgContainer}
 
@@ -87,7 +87,7 @@ const Book = ({
             language,
             description,
             categories,
-            toggleBookDetails,
+            setBookDetails,
           }}
         />
       )}
