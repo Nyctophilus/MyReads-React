@@ -4,6 +4,7 @@ import Loading from "./components/Loading/Loading";
 import Main from "./pages/Main";
 
 const Search = lazy(() => import("./pages/Search"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const App = () => {
   return (
@@ -12,6 +13,8 @@ const App = () => {
         <Route path="/" element={<Main />} />
 
         <Route path="/search" element={<Search />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );
