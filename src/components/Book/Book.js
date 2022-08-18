@@ -1,6 +1,7 @@
 import { useState, lazy } from "react";
 import Button from "../UI/Button/Button";
 import classes from "./Book.module.css";
+import ProtoTypes from "prop-types";
 
 const DropDownModal = lazy(() =>
   import("../DropDownModal/DropDownModal")
@@ -93,6 +94,20 @@ const Book = ({
       )}
     </>
   );
+};
+
+Book.propTypes = {
+  title: ProtoTypes.string.isRequired,
+  imageLinks: ProtoTypes.object,
+  authors: ProtoTypes.array,
+  shelf: ProtoTypes.string,
+  id: ProtoTypes.string.isRequired,
+  subtitle: ProtoTypes.string,
+  publishedDate: ProtoTypes.string,
+  publisher: ProtoTypes.string,
+  language: ProtoTypes.string,
+  description: ProtoTypes.string,
+  categories: ProtoTypes.array,
 };
 
 export default Book;
