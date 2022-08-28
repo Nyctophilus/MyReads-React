@@ -9,7 +9,7 @@ import { DdContextProvider } from "./hooks/books-context";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <DdContextProvider>
-      <Router>
+      <Router basename="/MyReads-React">
         <App />
       </Router>
     </DdContextProvider>
