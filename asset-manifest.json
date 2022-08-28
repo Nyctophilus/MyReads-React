@@ -1,30 +1,32 @@
 {
   "files": {
     "main.css": "/MyReads-React/static/css/main.56c84998.css",
-    "main.js": "/MyReads-React/static/js/main.f1fd2ed1.js",
+    "main.js": "/MyReads-React/static/js/main.57a2c787.js",
     "static/css/390.319fcc2c.chunk.css": "/MyReads-React/static/css/390.319fcc2c.chunk.css",
     "static/js/390.c8b21843.chunk.js": "/MyReads-React/static/js/390.c8b21843.chunk.js",
+    "static/js/922.a3666d7c.chunk.js": "/MyReads-React/static/js/922.a3666d7c.chunk.js",
     "static/js/583.0b4e56ba.chunk.js": "/MyReads-React/static/js/583.0b4e56ba.chunk.js",
     "static/css/387.b7ebf2f4.chunk.css": "/MyReads-React/static/css/387.b7ebf2f4.chunk.css",
-    "static/js/387.fe35468e.chunk.js": "/MyReads-React/static/js/387.fe35468e.chunk.js",
+    "static/js/387.3a4b64b6.chunk.js": "/MyReads-React/static/js/387.3a4b64b6.chunk.js",
     "static/css/978.3b6c117c.chunk.css": "/MyReads-React/static/css/978.3b6c117c.chunk.css",
-    "static/js/978.fb1aca0f.chunk.js": "/MyReads-React/static/js/978.fb1aca0f.chunk.js",
+    "static/js/978.2929f248.chunk.js": "/MyReads-React/static/js/978.2929f248.chunk.js",
     "index.html": "/MyReads-React/index.html",
     "static/media/arrow-back.svg": "/MyReads-React/static/media/arrow-back.cd079cab42defead9875f9270c5ad67c.svg",
     "static/media/add.svg": "/MyReads-React/static/media/add.1b5d9b6afb5557f7992cc85713ca0faf.svg",
     "static/media/arrow-drop-down.svg": "/MyReads-React/static/media/arrow-drop-down.4378492a3a09dbfc31ff4b858fccb74a.svg",
     "main.56c84998.css.map": "/MyReads-React/static/css/main.56c84998.css.map",
-    "main.f1fd2ed1.js.map": "/MyReads-React/static/js/main.f1fd2ed1.js.map",
+    "main.57a2c787.js.map": "/MyReads-React/static/js/main.57a2c787.js.map",
     "390.319fcc2c.chunk.css.map": "/MyReads-React/static/css/390.319fcc2c.chunk.css.map",
     "390.c8b21843.chunk.js.map": "/MyReads-React/static/js/390.c8b21843.chunk.js.map",
+    "922.a3666d7c.chunk.js.map": "/MyReads-React/static/js/922.a3666d7c.chunk.js.map",
     "583.0b4e56ba.chunk.js.map": "/MyReads-React/static/js/583.0b4e56ba.chunk.js.map",
     "387.b7ebf2f4.chunk.css.map": "/MyReads-React/static/css/387.b7ebf2f4.chunk.css.map",
-    "387.fe35468e.chunk.js.map": "/MyReads-React/static/js/387.fe35468e.chunk.js.map",
+    "387.3a4b64b6.chunk.js.map": "/MyReads-React/static/js/387.3a4b64b6.chunk.js.map",
     "978.3b6c117c.chunk.css.map": "/MyReads-React/static/css/978.3b6c117c.chunk.css.map",
-    "978.fb1aca0f.chunk.js.map": "/MyReads-React/static/js/978.fb1aca0f.chunk.js.map"
+    "978.2929f248.chunk.js.map": "/MyReads-React/static/js/978.2929f248.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.56c84998.css",
-    "static/js/main.f1fd2ed1.js"
+    "static/js/main.57a2c787.js"
   ]
 }
